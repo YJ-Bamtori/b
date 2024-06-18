@@ -3,7 +3,7 @@ document.getElementById('click-area').addEventListener('click', function(event) 
     const images = ['sticker01.png', 'sticker02.png', 'sticker03.png', 'sticker04.png', 'sticker05.png', 'sticker06.png', 'sticker07.png', 'sticker08.png'];//스티커 랜덤배열
     const randomImage = images[Math.floor(Math.random() * images.length)];
     const imgElement = document.createElement('img');
-    imgElement.src = './' + randomImage;
+    imgElement.src = randomImage;
     imgElement.onload = function() {
     const imageWidth = imgElement.width;
     const imageHeight = imgElement.height;
