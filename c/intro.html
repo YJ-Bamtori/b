@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/MotionPathPlugin.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        body {
+            background-color: #F7F7F7; 
+        }
+
+        header {
+            background: #fff;
+            width: 100vw;
+            height: 60px;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar {
+            max-width: 1280px;
+            display: flex;
+            flex: 1 1 0;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar > ul {
+            display: flex;
+            gap: 32px;
+        }
+
+        .navbar a {
+            color: #303030;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: -0.36px;
+        }
+
+        .utility {
+            display: flex;
+            gap: 24px;
+            flex: 1;
+            justify-content: end;
+        }
+
+        .utility button {
+            background-color: transparent;
+            border: transparent;
+            cursor: pointer;
+        }
+
+        #title {
+            margin: 0 auto;
+            max-width: 1280px;
+        }
+
+        .anim-typewriter {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            visibility: hidden; 
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            width: 1280px;
+        }
+
+        .container > div {
+            flex: 1;
+        }
+
+        .div1 {
+            display: flex;
+            padding-top: 36px;
+            padding-bottom: 36px;
+            font-size: 20px;
+        }
+
+        .div1 p {
+            flex: 1;
+            margin: 0;
+        }
+
+        .div1:not(:last-child) {
+            border-bottom: #303030 dashed 1px;
+        }
+
+        .div2 {
+            position: relative;
+            background-color: black;
+            color: white;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            padding-left: 60px;
+            border-radius: 20px;
+            font-size: 40px;
+        }
+
+        .div2 > span{
+            font-size: 28px;
+        }
+
+        .p3 > span {
+            font-size: 60px;
+            font-family: poppins;
+            font-weight: 700;
+        }
+
+        .p3 {
+            font-size: 24px;
+        }
+
+        .hover-image {
+            position: absolute;
+            top: 50%;
+            left: -420px; 
+            transform: translateY(-50%);
+            display: none;
+            width: 320px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+        }
+
+        .shape-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            width: 368px;
+            height: 255px;
+            background-image: url('https://i.postimg.cc/fbNQ0cF8/flame-1032.png');
+            background-size: cover;
+            opacity: 0.75;
+            will-change: transform;
+        }
+
+        footer{
+    width: 100%;
+    height: 100px; 
+    padding-top: 15px;
+    align-items: center;
+    align-content: center;
+}
+
+.ftbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 221px;
+    flex-shrink: 0;
+}
+
+.fticon{
+    width: 173px;
+    height: 53.409px;
+    flex-shrink: 0;
+}
+
+
+.ftcontent{
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.ftcontent ul{
+    display:flex;
+    justify-content: center;
+
+}
+
+.ftcontent ul li{
+    margin-left:32px;
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.4px;
+}
+.ftcontent ul li:first-child{
+    margin-left:0px;
+}
+
+
+
+.ftlast{
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.ftlast ul{
+    display: flex;
+}
+.ftlast ul li{
+    margin-left:40px;
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; 
+}
+.ftlast ul li:first-child{
+    margin-left:0px;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="#"><img src="logo.svg" alt="" height="32px"></a>
+            </div>
+
+            <ul class="navbar-menu">
+                <li class="navbar-item current"><a href="#">소개</a></li>
+                <li class="navbar-item"><a href="#">프로그램</a></li>
+                <li class="navbar-item"><a href="#">예약</a></li>
+                <li class="navbar-item"><a href="#">고객서비스</a></li>
+            </ul>
+
+            <div class="utility">
+                <button><img src="search.svg" alt=""></button>
+                <button><img src="user.svg" alt=""></button>
+            </div>
+        </div>
+    </header>
+
+    <div id="fullpage">
+        <div class="section">
+            <div id="title">
+                <p style="font-size: 18px; margin-bottom: 68px;">HOME / PLATFORM</p>
+                <p style="font-size: 24px; margin-bottom: 36px;">(PLATFORM)</p>
+                <p class="anim-typewriter" style="font-size: 36px; font-weight: 600;">월곶예술공판장 아트독에 오신 걸 환영합니다</p>
+            </div>
+        </div>
+
+        <div class="section" id="animated-section" style="position: relative;">
+            <div class="shape-container"></div>
+            <div class="container" style="width: 1280px; margin: 0 auto; position: relative; z-index: 1;">
+                <div><p style="font-size: 18px; font-weight: 400;">(PLATFORM PROFILE)</p></div>
+                <div>
+                    <div class="div1"><p>주소</p><p>시흥시 월곶해안로 205</p></div>
+                    <div class="div1"><p>개소일</p><p>2016년 4월 27일</p></div>
+                    <div class="div1"><p>운영시간</p><p>평일 9:00 ~ 17:00</p></div>
+                    <div class="div1"><p>문의</p><p>070-4493-8907</p></div>
+                    <div class="div1"><p>Instagram</p><p>wolgot_artdock</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="container" style="width: 1280px; margin: 0 auto;">
+                <div><p style="font-size: 18px; font-weight: 400;">(공간구성)</p></div>
+                <div>
+                    <div class="div2" id="div2-1"><strong>2층</strong> 사무실
+                        <div class="hover-image" id="hover-image-1" style="background-image: url('https://www.i-neoce.co.kr/data/item/1537893450/thumb-7IOB7Y6Y66mU6_800x800.jpg');"></div>
+                    </div>
+                    <div class="div2" id="div2-2"><strong>1층</strong> 다목적홀 <span>360㎡</span>
+                        <div class="hover-image" id="hover-image-2" style="background-image: url('https://mblogthumb-phinf.pstatic.net/MjAyMjA0MDFfMjgz/MDAxNjQ4Nzk5Nzc4ODk4.PW1xIa6-I82Fk06hFM_2PF6XvrINV9ed-4Em_A7uzS8g.hCsKa47oGBAS8xb6dUtutjMitHsV4JRhYFC_xHYgUJwg.JPEG.csiheung/0._월곶_예술공판장_아트독_1.JPG?type=w800');"></div>
+                    </div>
+                    <div class="div2" id="div2-3"><strong>1층</strong> 목공실 <span>52㎡</span>
+                        <div class="hover-image" id="hover-image-3" style="background-image: url('https://mblogthumb-phinf.pstatic.net/MjAxOTA2MTRfMTc0/MDAxNTYwNDc1OTI1NDU1.lfY68RZBlPUcbu8B5Hp67v5IHR9AoXR8dOBe9NrNGNog.vyPRcgBw-ZrI0PoeQseXhwEd9EIn_ehQtIWAfRg5Coog.JPEG.artdock_sh/190529_목공클래스1.jpg?type=w800');"></div>
+                    </div>
+                    <div class="div2" id="div2-4"><strong>1층</strong> 주방 <span>38㎡</span>
+                        <div class="hover-image" id="hover-image-4" style="background-image: url('https://i.postimg.cc/wxLg1JK7/2024-06-19-6-43-31.png');"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" style="background-color: black;">
+            <div style="width: 1280px; margin: 0 auto;">
+                <div style="display: flex; gap: 75px;">
+                    <p style="font-size: 18px; font-weight: 400; color: #fff;">(PLATFORM HISTORY)</p>
+                    <p style="font-size: 36px; font-weight: 600; color: #fff;">월곶예술공판장 아트독의 역사를 소개합니다</p>
+                </div>
+            </div>
+        </div>
+        <div class="section" style="background-color: black;">
+            <div class="container" style="display: flex; justify-content: flex-end; width: 1000px; margin: 0 auto;">
+                <div style="display: flex; margin-top: 100px; justify-content: space-between; width: 1000px;">
+                    <p class="p3" style="width: 400px; color: #fff;"><span>2016. 04</span><br>월곶예술공판장 아트독 개소</p>
+                    <img src="https://i.postimg.cc/NfgR4csw/2-3.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="section" style="background-color: black;">
+            <div class="container" style="display: flex; justify-content: flex-end; width: 1000px; margin: 0 auto;">
+                <div style="display: flex; margin-top: 100px; justify-content: space-between; width: 1000px;">
+                    <p class="p3" style="width: 400px; color: #fff;"><span>2018. 06</span><br>2018 상반기 생활 문화 교육<br>프로그램 진행</p>
+                    <img src="https://i.postimg.cc/LXf8Yqft/2024-06-15-6-36-55-1.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="section" style="background-color: black;">
+            <div class="container" style="display: flex; justify-content: flex-end; width: 1000px; margin: 0 auto;">
+                <div style="display: flex; margin-top: 100px; justify-content: space-between; width: 1200px;">
+                    <p class="p3" style="width: 400px; color: #fff;"><span>2018. 09</span><br>시흥 로컬 브랜드 개발<br>미스터리 에너자이저 프로그램<br> 진행</p>
+                    <img src="https://i.postimg.cc/PJQfyBSN/2024-06-15-7-40-24-1.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="section" style="background-color: black;">
+            <div class="container" style="display: flex; justify-content: flex-end; width: 1000px; margin: 0 auto;">
+                <div style="display: flex; margin-top: 100px; justify-content: space-between; width: 1200px;">
+                    <p class="p3" style="width: 400px; color: #fff;"><span>2021. 11</span><br>2021 문화 공감 공유회 프로그램<br>진행</p>
+                    <img src="https://i.postimg.cc/x1056M1d/2024-06-15-7-30-15-1.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="section" style="background-color: black;">
+            <div class="container" style="display: flex; justify-content: flex-end; width: 1000px; margin: 0 auto;">
+                <div style="display: flex; margin-top: 100px; justify-content: space-between; width: 1200px;">
+                    <p class="p3" style="width: 400px; color: #fff;"><span>2022. 06</span><br>2022 온라인 챌린지 일상시도 31<br> 진행</p>
+                    <img src="https://i.postimg.cc/2yQdwSpv/2024-06-15-7-34-03-1.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="section" style="background-color: black;">
+            <div class="container" style="display: flex; justify-content: flex-end; width: 1000px; margin: 0 auto;">
+                <div style="display: flex; margin-top: 100px; justify-content: space-between; width: 1200px;">
+                    <p class="p3" style="width: 400px; color: #fff;"><span>2023. 02</span><br>2023 온라인 챌린지 시흥을 그린<br>진행</p>
+                    <img src="https://i.postimg.cc/qvjLSqNx/2024-06-15-6-25-53-1.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="section fp-auto-height">
+            <footer>
+                <div class="ftbox">
+                  <img class="fticon" src="logo.svg">
+              
+              
+                  <div class="ftcontent">
+                    <ul>
+                        <li>소개</li>
+                        <li>프로그램</li>
+                        <li>예약</li>
+                        <li>고객서비스</li>
+                    </ul>
+                  </div>
+              
+                     <div class="ftlast">
+                        <ul>
+                         <li>PRIVACY POLICY</li>
+                         <li>© WORGOT ART DOCK️</li>
+                        </ul>
+                    </div>
+              
+                </div>
+                </footer></div>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const textElement = document.querySelector(".anim-typewriter");
+            const text = textElement.textContent;
+            textElement.innerHTML = text.split("").map(char => `<span>${char}</span>`).join("");
+            textElement.style.visibility = "visible";
+           
+
+            let tl = gsap.timeline();
+
+            tl.from(".anim-typewriter span", {
+                duration: 0.05,
+                opacity: 0,
+                ease: "Linear.easeNone",
+                stagger: 0.05
+            });
+
+            new fullpage('#fullpage', {
+                autoScrolling: true,
+                scrollHorizontally: true,
+                onLeave: function(origin, destination, direction){
+                    const section = destination.item;
+                    const animElements = section.querySelector('#div2-1');
+                    const animElements2 = section.querySelector('#div2-2');
+                    const animElements3 = section.querySelector('#div2-3');
+                    const animElements4 = section.querySelector('#div2-4');
+
+                    gsap.fromTo(animElements, 
+                        { x: 50, opacity: 0.5 }, 
+                        { 
+                            x: 0, 
+                            opacity: 1, 
+                            duration: 0.75,
+                            ease: "power2.inOut"
+                        });
+
+                    gsap.fromTo(animElements2, 
+                        { x: 40, opacity: 0.5 }, 
+                        { 
+                            x: 0, 
+                            opacity: 1, 
+                            duration: 1,
+                            ease: "power2.inOut"
+                        });
+
+                    gsap.fromTo(animElements3, 
+                        { x: 30, opacity: 0.5 }, 
+                        { 
+                            x: 0, 
+                            opacity: 1, 
+                            duration: 1.25,
+                            ease: "power2.inOut"
+                        });
+
+                    gsap.fromTo(animElements4, 
+                        { x: 20, opacity: 0.5 }, 
+                        { 
+                            x: 0, 
+                            opacity: 1, 
+                            duration: 1.5,
+                            ease: "power2.inOut"
+                        });
+
+                    if(destination.index === 1) {
+                        animateBird();
+                    }
+
+                    if (destination.isLast) {
+                        const footerHeight = document.querySelector('footer').offsetHeight;
+                        gsap.to(window, {scrollTo: {y: window.scrollY + footerHeight}, duration: 1});
+                    }
+                }
+            });
+
+            const hoverItems = [
+                { id: "div2-1", imageId: "hover-image-1" },
+                { id: "div2-2", imageId: "hover-image-2" },
+                { id: "div2-3", imageId: "hover-image-3" },
+                { id: "div2-4", imageId: "hover-image-4" }
+            ];
+
+            hoverItems.forEach(item => {
+                const div = document.getElementById(item.id);
+                const image = document.getElementById(item.imageId);
+
+                div.addEventListener("mouseenter", () => {
+                    image.style.display = "block";
+                });
+
+                div.addEventListener("mouseleave", () => {
+                    image.style.display = "none";
+                });
+            });
+
+            const shapeContainer = document.querySelector('.shape-container');
+            const bird = document.createElement('div');
+            bird.classList.add('shape');
+            shapeContainer.appendChild(bird);
+
+            gsap.registerPlugin(MotionPathPlugin);
+
+            function animateBird() {
+                gsap.to(bird, {
+                    duration: 5,
+                    repeat: -1,
+                    motionPath: {
+                        path: [
+                            {x: 100, y: 0},
+                            {x: 2000, y: 500},
+                           
+                        ],
+                        curviness: 1.25,
+                        autoRotate: true
+                    },
+                    ease: "none"
+                });
+            }
+        });
+
+    </script>
+</body>
+</html>
