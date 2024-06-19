@@ -9,6 +9,9 @@
     font-family: "Noto Sans KR", sans-serif;
     
 }
+body{
+    background-color: #F7F7F7;
+}
 /*-------------------------- 네비게이션바 --------------------------*/
 header{
     background: #fff;
@@ -247,8 +250,6 @@ header{
 .secA{
     width: 67vw;
     margin: 0 auto;
-    background-color: rgb(147, 103, 103);
-    background-color: #fff;
     position: relative;
 }
 
@@ -399,6 +400,7 @@ h3{
     height: 150px;
     align-items: center;
     align-content: center;
+    background-color: #fff;
 }
 
 .ftbox{
