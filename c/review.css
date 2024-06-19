@@ -264,6 +264,9 @@ header{
     margin-bottom: 48px;
     
 }
+    #categoryFilter{
+        background-color: transparent;
+    }
     .filter-container input{
         display: flex;
         padding: 4px 0px;
@@ -271,6 +274,7 @@ header{
         color: rgba(118, 118, 118, 0.90);
         font-size: 24px;
         font-weight: 500;
+        background: trans
     }
     .filter-container p{
         color: rgba(0, 0, 0, 0.90);
