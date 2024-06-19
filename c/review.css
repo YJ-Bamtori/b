@@ -392,8 +392,6 @@ h3{
 }
 
 
-/*-------------------------- 푸터 --------------------------*/
-
 /* 푸터 */
 .real-footer{
     position: relative;
@@ -412,8 +410,8 @@ h3{
 }
 
 .fticon{
-    width: 173px;
-    height: 53.409px;
+    /* width: 100px;
+    height: 53.409px; */
     flex-shrink: 0;
 }
 
@@ -465,6 +463,3 @@ h3{
 .ftlast ul li:first-child{
     margin-left:0px;
 }
-
-
-/*  */
