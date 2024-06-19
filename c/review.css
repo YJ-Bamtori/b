@@ -410,8 +410,8 @@ h3{
 }
 
 .fticon{
-    /* width: 100px;
-    height: 53.409px; */
+    width: 100px;
+    height: 30px;
     flex-shrink: 0;
 }
 
@@ -463,3 +463,4 @@ h3{
 .ftlast ul li:first-child{
     margin-left:0px;
 }
+
