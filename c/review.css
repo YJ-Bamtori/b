@@ -393,7 +393,78 @@ h3{
 
 
 /*-------------------------- 푸터 --------------------------*/
+
+/* 푸터 */
 .real-footer{
+    position: relative;
+    width: 100%;
     height: 150px;
-    background-color: #000;
+    align-items: center;
+    align-content: center;
 }
+
+.ftbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 221px;
+    flex-shrink: 0;
+}
+
+.fticon{
+    width: 173px;
+    height: 53.409px;
+    flex-shrink: 0;
+}
+
+
+.ftcontent{
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.ftcontent ul{
+    display:flex;
+    justify-content: center; /* 중앙 정렬 */
+
+}
+
+.ftcontent ul li{
+    margin-left:32px;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 120% */
+    letter-spacing: -0.4px;
+}
+.ftcontent ul li:first-child{
+    margin-left:0px;
+}
+
+
+
+.ftlast{
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.ftlast ul{
+    display: flex;
+}
+.ftlast ul li{
+    margin-left:40px;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+}
+.ftlast ul li:first-child{
+    margin-left:0px;
+}
+
+
+/*  */
