@@ -94,7 +94,7 @@
             display: inline-block;
             white-space: nowrap;
             overflow: hidden;
-            visibility: hidden; /* Initially hide the text */
+            visibility: hidden; 
         }
 
         .circle {
@@ -103,7 +103,7 @@
             background-color: black;
             width: 5px;
             height: 5px;
-            z-index: 1; /* 낮은 z-index 값으로 뒤로 보내기 */
+            z-index: 1; 
         }
 
         /*-------------------------- 타이틀 --------------------------*/
@@ -198,7 +198,7 @@
 /* 푸터 */
 footer{
     width: 100%;
-    height: 100px; /* 지정된 높이 */
+    height: 100px; 
     align-items: center;
     align-content: center;
 }
@@ -225,7 +225,7 @@ footer{
 
 .ftcontent ul{
     display:flex;
-    justify-content: center; /* 중앙 정렬 */
+    justify-content: center; 
 
 }
 
@@ -235,7 +235,7 @@ footer{
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
-    line-height: 24px; /* 120% */
+    line-height: 24px; 
     letter-spacing: -0.4px;
 }
 .ftcontent ul li:first-child{
@@ -258,7 +258,7 @@ footer{
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px; /* 150% */
+    line-height: 24px; 
 }
 .ftlast ul li:first-child{
     margin-left:0px;
@@ -390,11 +390,10 @@ footer{
             const text = textElement.textContent;
             textElement.innerHTML = text.split("").map(char => `<span>${char}</span>`).join("");
             textElement.style.visibility = "visible"; // Show the text after splitting
-
-            // Create a timeline
+            
             let tl = gsap.timeline();
 
-            // Add each character to the timeline
+            
             tl.from(".anim-typewriter span", {
                 duration: 0.05,
                 opacity: 0,
@@ -404,7 +403,7 @@ footer{
         });
 
         new fullpage('#fullpage', {
-    autoScrolling: true, // autoScrolling 활성화
+    autoScrolling: true, 
     scrollHorizontally: true,
     onLeave: function(origin, destination, direction){
         const section = destination.item;
@@ -509,7 +508,6 @@ footer{
                 ease: "power2.inOut"
             });
 
-        // 마지막 섹션에서 푸터로 스크롤 제어
         if (destination.isLast) {
             const footerHeight = document.querySelector('footer').offsetHeight;
             gsap.to(window, {scrollTo: {y: window.scrollY + footerHeight}, duration: 1});
